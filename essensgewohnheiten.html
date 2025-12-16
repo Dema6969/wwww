@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Tägliche Essensgewohnheiten</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: white;
+      color: black;
+    }
+    header {
+      background-color: black;
+      color: white;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="text-center py-5">
+  <h1>Tägliche Essensgewohnheiten</h1>
+</header>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.html">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="essensgewohnheiten.html">Tägliche Essensgewohnheiten</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Fitness.html">Mein Fitness-Programm</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- 🎵 Musiksteuerung -->
+<audio id="bg-music" loop>
+  <source src="audio/1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="text-center my-4">
+  <button id="music-btn" class="btn btn-outline-primary">🎵 Musik starten</button>
+</div>
+
+<script>
+const music = document.getElementById('bg-music');
+const btn = document.getElementById('music-btn');
+let playing = false;
+
+btn.addEventListener('click', () => {
+  if (!playing) {
+    music.play();
+    btn.textContent = "⏸️ Musik pausieren";
+    playing = true;
+  } else {
+    music.pause();
+    btn.textContent = "🎵 Musik starten";
+    playing = false;
+  }
+});
+</script>
+
+<!-- Essenskarten -->
+<div class="container mt-4">
+
+  <!-- Tag 1 -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h4 class="card-title">Tag 1 - 08. Oktober 2024</h4>
+      <p><strong>Uhrzeit:</strong> 08:00 Uhr</p>
+      <p><strong>Rezept:</strong> Haferflocken mit Banane und Nüssen</p>
+      <img src="bilder/Flocken.png" alt="Frühstück Bild" class="img-fluid rounded">
+
+      <!-- Bewertung -->
+    <div class="mt-3">
+      <div class="stars" data-id="1">
+        ★ ★ ★ ★ ★
+      </div>
+      <div class="rating-count" id="rating-count-1">Bewertung: 0 Sterne</div>
+      <div class="comment-section" data-id="1">
+        <h5>Kommentare</h5>
+        <div class="comments-list" id="comments-1"></div>
+        <div class="form-group mt-2">
+          <textarea class="form-control" rows="2" placeholder="Kommentar schreiben..."></textarea>
+          <button class="btn btn-primary btn-sm mt-2 submit-comment">Absenden</button>
+    </div>
+  </div>
+</div>
+
+  <!-- Tag 2 -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h4 class="card-title">Tag 2 - 09. Oktober 2024</h4>
+      <p><strong>Uhrzeit:</strong> 12:30 Uhr</p>
+      <p><strong>Rezept:</strong> Griechischer Salat mit Feta und Oliven</p>
+      <img src="bilder/Salat.png" alt="Mittagessen Bild" class="img-fluid rounded">
+
+   <!-- Bewertung -->
+   <div class="mt-3">
+    <div class="stars" data-id="2">
+      ★ ★ ★ ★ ★
+    </div>
+    <div class="rating-count" id="rating-count-2">Bewertung: 0 Sterne</div>
+    <div class="comment-section" data-id="2">
+      <h5>Kommentare</h5>
+      <div class="comments-list" id="comments-2"></div>
+      <div class="form-group mt-2">
+        <textarea class="form-control" rows="2" placeholder="Kommentar schreiben..."></textarea>
+        <button class="btn btn-primary btn-sm mt-2 submit-comment">Absenden</button>
+  </div>
+</div>
+</div>
+
+  <!-- Tag 3 -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h4 class="card-title">Tag 3 - 10. Oktober 2024</h4>
+      <p><strong>Uhrzeit:</strong> 18:30 Uhr</p>
+      <p><strong>Rezept:</strong> Pizza</p>
+      <img src="bilder/Pizza.png" alt="Abendessen Bild" class="img-fluid rounded">
+    
+       <!-- Bewertung -->
+    <div class="mt-3">
+      <div class="stars" data-id="3">
+        ★ ★ ★ ★ ★
+      </div>
+      <div class="rating-count" id="rating-count-3">Bewertung: 0 Sterne</div>
+      <div class="comment-section" data-id="3">
+        <h5>Kommentare</h5>
+        <div class="comments-list" id="comments-3"></div>
+        <div class="form-group mt-2">
+          <textarea class="form-control" rows="2" placeholder="Kommentar schreiben..."></textarea>
+          <button class="btn btn-primary btn-sm mt-2 submit-comment">Absenden</button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Fußzeile -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <p>&copy; 2023 Mein Blog</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Mein JS -->
+<script src="scripts.js"></script>
+
+</body>
+</html>
+
